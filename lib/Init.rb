@@ -5,8 +5,6 @@ class Init
     @number_of_players=number_of_players
     @array_of_players = []
     @count=1
-  end
-  def define_players
     until @count > @number_of_players
       puts "Please enter name for Player #{@count}"
       name_of_player = gets.chomp
