@@ -8,14 +8,14 @@ puts "Test project"
 #array_of_die=[rand(1..6),rand(1..6),rand(1..6),rand(1..6),rand(1..6)]
 #p dice = array_of_die.sort!
 #dice =[1,2,3,4,6]
-dice =[1,2,4,5,6]
+dice =[2,2,4,5,6]
 
 p index=[dice.count(1),dice.count(2),dice.count(3),dice.count(4),dice.count(5),dice.count(6)]
 points=0
 
 if (index.count(1) >= 4 and (index[2] !=0 and index[3] !=0)) or (index.count(1) == 3 and index.count(2)==1)
   points = 30
-  puts "small Straight"
+  puts "You've just thrown Small straight #{dice.join(" ")}"
 elsif index.count(1)== 5 and (index[0]==0 or index[5]==0 )
   points=50
   puts "Straight"

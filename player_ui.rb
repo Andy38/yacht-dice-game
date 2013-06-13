@@ -12,15 +12,22 @@ die=Die.new
 game=Game.new
 until game.over?
   init.array_of_players.each { |player|
-    puts "Player #{player.name} you turn"
+    puts "\nPlayer #{player.name} you turn"
     turn=Turn.new(player)
     until turn.over?
       turn.roll(die)
       unless turn.over?
-        puts "Press 'h' to roll again.\n\n"
+        puts "You have #{player.try} try to threw again"
+        puts "Press 'r' to roll again or another button to continue."
         player_choice = gets.chomp
-        puts "You have #{player.try} try"
-        turn.hold if player_choice != 'h'
-
-    end}
+        if player_choice != 'r' or player.try == 0
+          turn.hold
+        else
+          turn.continue
+        end
+      end
+    end
+  }
+  game.times_up
 end
+game.winner(init.array_of_players)
