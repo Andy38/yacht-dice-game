@@ -4,8 +4,7 @@ require './lib/Game'
 require './lib/Die'
 require './lib/Turn'
 
-puts "Welcome to Yacht Dice!\n\n"
-puts "Please enter a number of players!"
+puts "Welcome to Yacht Dice!\n\n Please enter a number of players!"
 number_of_players=gets.chomp.to_i
 init = Init.new(number_of_players)
 die=Die.new

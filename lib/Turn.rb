@@ -41,9 +41,7 @@ class Turn
 
   def hold
     @over = true
-    if @player.previous_rolls.select{|rolls| rolls != @dice.join("")}.any?
-      @player.add_points(@points)
-    end
+    @player.add_points(@points) if @player.previous_rolls.select { |rolls| rolls != @dice.join("") }.any?
     @player.previous_rolls << @dice.join("")
   end
 
